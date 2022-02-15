@@ -1,0 +1,19 @@
+{
+  "name": "libraryreservations",
+  "version": "1.0.0",
+  "description": "quick and easy attempt to automate geisel library reservations with cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArturoAmaya/LibraryReservations.git"
+  },
+  "author": "Arturo Amaya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArturoAmaya/LibraryReservations/issues"
+  },
+  "homepage": "https://github.com/ArturoAmaya/LibraryReservations#readme"
+}
