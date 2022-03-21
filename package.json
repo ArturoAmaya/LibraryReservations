@@ -1,32 +1,24 @@
 {
   "name": "libraryreservations",
-  "version": "1.0.0",
-  "description": "quick and easy attempt to automate geisel library reservations with cypress",
+  "version": "1.1.0",
+  "description": "rebooted attempt to make a quick bot to do my library reservations",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ArturoAmaya/LibraryReservations.git"
   },
+  "keywords": [
+    "geisel",
+    "library",
+    "space"
+  ],
   "author": "Arturo Amaya",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ArturoAmaya/LibraryReservations/issues"
   },
-  "homepage": "https://github.com/ArturoAmaya/LibraryReservations#readme",
-  "devDependencies": {
-    "@babel/core": "^7.17.4",
-    "@babel/preset-env": "^7.16.11",
-    "babel-jest": "^27.5.1",
-    "cypress": "^9.5.0",
-    "jest": "^27.5.1",
-    "jest-puppeteer": "^6.1.0",
-    "puppeteer": "^13.3.2"
-  },
-  "jest": {
-    "preset": "jest-puppeteer",
-    "verbose": true
-  }
+  "homepage": "https://github.com/ArturoAmaya/LibraryReservations#readme"
 }
