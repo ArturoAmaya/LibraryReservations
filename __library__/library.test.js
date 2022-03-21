@@ -3,6 +3,7 @@ describe("Basic test", () => {
   beforeAll(async () => {
     await page.goto("https://ucsd.libcal.com/reserve", {
       waitUntil: "load",
+      timeout: 12000
     });
     page.once("load", () => {
       console.log("pageloaded!");
