@@ -11,8 +11,9 @@ describe("Basic test", () => {
   });
 
   it ("Initial Home page", async() =>{
-      const time = await page.$eval(".fc-timeline-slot-cushion fc-scrollgrid-sync-inner", (prod) => {
-          return prod.getProperty("innerText");
+      const time = await page.$eval("#eq-time-grid > div.fc-header-toolbar.fc-toolbar.fc-toolbar-ltr > div:nth-child(1) > div > button.fc-next-button.btn.btn-default.btn-sm", (prod) => {
+         console.log("aha\n");
+         let potato = await prod.getProperty("innerText");
       })
   });
 
