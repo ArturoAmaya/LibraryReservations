@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/ArturoAmaya/LibraryReservations/issues"
   },
-  "homepage": "https://github.com/ArturoAmaya/LibraryReservations#readme"
+  "homepage": "https://github.com/ArturoAmaya/LibraryReservations#readme",
+  "dependencies": {
+    "puppeteer": "^13.5.1"
+  }
 }
