@@ -23,11 +23,11 @@ const puppeteer = require('puppeteer');
     }
 
     // Now you're on the correct day, two weeks from today
-    const timeslot1 = await page.$('#eq-time-grid > div.fc-view-harness.fc-view-harness-passive > div > table > tbody > tr > td:nth-child(3) > div > div > div > table > tbody > tr:nth-child(7) > td > div > div.fc-timeline-events.fc-scrollgrid-sync-inner > div:nth-child(15) > a');
+    const timeslot1 = await page.$('#eq-time-grid > div.fc-view-harness.fc-view-harness-passive > div > table > tbody > tr > td:nth-child(3) > div > div > div > table > tbody > tr:nth-child(19) > td > div > div.fc-timeline-events.fc-scrollgrid-sync-inner > div:nth-child(12) > a');
     await timeslot1.click();
 
     await page.waitForTimeout(3000);
-    
+
     await Promise.all([
         page.waitForNavigation({waitUntil: 'networkidle0'}),
         page.click('#submit_times')
@@ -36,5 +36,9 @@ const puppeteer = require('puppeteer');
     await page.waitForSelector('#main-content > div > section > h1 > span');
     await page.screenshot({path: './screenshots/duo.png'});
 
+    await page.type('#ssousername', 'a1amaya');
+    await page.type('#ssopassword', 'R@D@r2d2R@D@R@D@');
+
+    await page.screenshot({path: './screenshots/duofilledout.png'});
     await browser.close();
 })();
