@@ -23,7 +23,7 @@ const puppeteer = require('puppeteer');
     }
 
     // Now you're on the correct day, two weeks from today
-    const timeslot1 = await page.$('#eq-time-grid > div.fc-view-harness.fc-view-harness-passive > div > table > tbody > tr > td:nth-child(3) > div > div > div > table > tbody > tr:nth-child(14) > td > div > div.fc-timeline-events.fc-scrollgrid-sync-inner > div:nth-child(11) > a');
+    const timeslot1 = await page.$('#eq-time-grid > div.fc-view-harness.fc-view-harness-passive > div > table > tbody > tr > td:nth-child(3) > div > div > div > table > tbody > tr:nth-child(33) > td > div > div.fc-timeline-events.fc-scrollgrid-sync-inner > div:nth-child(17) > a');
     await timeslot1.click();
 
     await page.waitForTimeout(3000);
@@ -50,10 +50,14 @@ const puppeteer = require('puppeteer');
 
     const duo = await page.$('#duo_iframe');
     await duo.screenshot({path:'./screenshots/duocontent.png'});
+    const duoframe = await duo.contentFrame();
 
+    //await duoframe.screenshot({path:'./screenshots/duoframecontent.png'});
+    //const temp = await duoframe.$('#login-form');
+    //await temp.screenshot({path: './screenshots/ssoform.png'});
     await Promise.all([
         page.waitForNavigation({waitUntil: 'networkidle0'}),
-        page.click('#auth_methods > fieldset:nth-child(1) > div.row-label.push-label > button')
+        duoframe.click('#auth_methods > fieldset:nth-child(1) > div.row-label.push-label > button'),
     ]);
 
     await page.screenshot({path: './screenshots/postduo.png'});
