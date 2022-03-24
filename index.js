@@ -38,8 +38,46 @@ const password = args[2];
 
     // 4. REQUEST TIMESLOT(S)
     // Now you're on the correct day, two weeks from today
-    const timeslot1 = await page.$('#eq-time-grid > div.fc-view-harness.fc-view-harness-passive > div > table > tbody > tr > td:nth-child(3) > div > div > div > table > tbody > tr:nth-child(33) > td > div > div.fc-timeline-events.fc-scrollgrid-sync-inner > div:nth-child(20) > a');
-    await timeslot1.click();
+    //const timeslot1 = await page.$('#eq-time-grid > div.fc-view-harness.fc-view-harness-passive > div > table > tbody > tr > td:nth-child(3) > div > div > div > table > tbody > tr:nth-child(33) > td > div > div.fc-timeline-events.fc-scrollgrid-sync-inner > div:nth-child(20) > a');
+    //await timeslot1.click();
+
+    await page.waitForTimeout(4000);
+    const libroom2096a = await page.$$('#eq-time-grid > div.fc-view-harness.fc-view-harness-passive > div > table > tbody > tr > td:nth-child(3) > div > div > div > table > tbody > tr:nth-child(33) > td > div > div.fc-timeline-events.fc-scrollgrid-sync-inner > div');
+    //console.log(libroom2096a.length);
+    const libroom2096a_properties = await libroom2096a[0].getProperties();
+    console.log(libroom2096a_properties);
+    await libroom2096a[0].screenshot({path: './screenshots/libroom2096a.png'});
+    //const libroom2096ai = await libroom2096a.getProperty("")
+    
+    let avail_class = false;
+    let avail_title = false;
+    let slot_count = 0;
+    // start at 1 because we don't really care about the 7:30 slot
+    let i = 1;
+    for (i=1; i<libroom2096a.length; i++) {
+        const a = await libroom2096a[i].$eval('a', a => a.getAttribute("class"));
+        const b = await libroom2096a[i].$eval('a', a => a.getAttribute("title"));
+        console.log(`${i}:${a}`);
+        console.log(`${i}:${b}`);
+
+        avail_class = a.includes('s-lc-eq-avail');
+        avail_title = b.includes('Available');
+
+        if ( (avail_class && avail_title) == true) {
+            await libroom2096a[i].$eval('a', a=>a.click());
+            await page.waitForTimeout(1000);
+            slot_count++;
+            if (slot_count == 4){
+                break;
+            }
+        }
+        //console.log(a_class);
+        //console.log(b_title);
+        //const libroom2096a = await page.evaluate
+    }
+
+    console.log(i);
+    console.log(slot_count);
 
     await page.waitForTimeout(3000);
 
@@ -70,10 +108,12 @@ const password = args[2];
         await page.screenshot({path: './screenshots/ssosubmitted.png'});
     }
     // 7. DUO AUTHENTICATION
+    await page.waitForTimeout(8000);
     const duo = await page.$('#duo_iframe');
     if (debug) {
         await duo.screenshot({path:'./screenshots/duocontent.png'});
     }
+
     const duoframe = await duo.contentFrame();
 
     //await duoframe.screenshot({path:'./screenshots/duoframecontent.png'});
