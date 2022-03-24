@@ -1,6 +1,6 @@
 {
   "name": "libraryreservations",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "rebooted attempt to make a quick bot to do my library reservations",
   "main": "index.js",
   "scripts": {

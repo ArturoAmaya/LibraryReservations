@@ -11,6 +11,9 @@ Attempt using cypress. Ran into problems with cross origin frames
 ### v1.1.0
 Attempt using puppeteer. As of now it can reserve one room for one hour 2 weeks from today. The room and hour must be passed in manually meaning it is not yet ready. 
 
+### v1.1.1
+Currently reserves times in 2096a. Good enough for private use.
+
 ## Planned:
 
 ### v1.2.0
