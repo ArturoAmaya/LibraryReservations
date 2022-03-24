@@ -40,7 +40,7 @@ const password = args[2];
     // Now you're on the correct day, two weeks from today
     //const timeslot1 = await page.$('#eq-time-grid > div.fc-view-harness.fc-view-harness-passive > div > table > tbody > tr > td:nth-child(3) > div > div > div > table > tbody > tr:nth-child(33) > td > div > div.fc-timeline-events.fc-scrollgrid-sync-inner > div:nth-child(20) > a');
     //await timeslot1.click();
-
+    // we're gonna hardcode 2096a for now
     await page.waitForTimeout(4000);
     const libroom2096a = await page.$$('#eq-time-grid > div.fc-view-harness.fc-view-harness-passive > div > table > tbody > tr > td:nth-child(3) > div > div > div > table > tbody > tr:nth-child(33) > td > div > div.fc-timeline-events.fc-scrollgrid-sync-inner > div');
     //console.log(libroom2096a.length);
