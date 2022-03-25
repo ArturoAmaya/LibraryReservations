@@ -2,6 +2,9 @@
 
 An attempt to automate library reservations at geisel library using puppeteer. 
 Done at the insistence of Nick De Mello :)
+NOTICE: AS OF 3/24/22 THIS PROJECT IS SUSPENDED UNTIL I SPEAK TO THE OFFICE OF STUDENT CONDUCT. I AM NOT RESPONSIBLE FOR PEOPLE USING THIS SOFTWARE. CURRENTLY THIS SOFTWARE IS IN POTENTIAL VIOLATION WITH THE LIBRARY RESERVATION POLICY. 
+I don't think they could catch me but whatever. Better safe than sorry.
+
 
 ## Version history:
 
